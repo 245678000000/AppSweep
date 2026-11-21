@@ -1,62 +1,68 @@
 <p align="center">
-  <img src="docs/icon.png" width="128" alt="AppSweep 图标">
+  <img src="docs/icon.png" width="128" alt="AppSweep icon">
 </p>
 
 <h1 align="center">AppSweep</h1>
 
 <p align="center">
-  一个 macOS 应用卸载工具：把 App 拖进窗口，自动找出它散落在系统各处的所有相关文件，勾选后一键移到废纸篓。
+  <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/245678000000/AppSweep?label=%E4%B8%8B%E8%BD%BD" alt="下载最新版"></a>
+  A macOS app uninstaller. Drop an app into the window, and AppSweep finds every file it has left scattered across your system, so you can move them all to the Trash in one click.
+</p>
+
+<p align="center">
+  <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/245678000000/AppSweep?label=Download" alt="Download latest release"></a>
   <img src="https://img.shields.io/badge/macOS-14%2B-blue" alt="macOS 14+">
   <img src="https://img.shields.io/badge/Apple%20Silicon-arm64-lightgrey" alt="Apple Silicon">
 </p>
 
-## 截图
+## Screenshots
 
 <table>
   <tr>
-    <td align="center"><img src="docs/screenshot-drop.png" width="420" alt="拖放界面"><br>把应用拖进来</td>
-    <td align="center"><img src="docs/screenshot-results.png" width="420" alt="扫描结果"><br>列出所有相关文件，勾选后删除</td>
+    <td align="center"><img src="docs/screenshot-drop.png" width="420" alt="Drop zone"><br>Drop an app in</td>
+    <td align="center"><img src="docs/screenshot-results.png" width="420" alt="Scan results"><br>Review the related files, then remove them</td>
   </tr>
 </table>
 
-## 功能
+> The interface is currently in Simplified Chinese.
 
-- 拖拽 `.app` 到窗口或 Dock 图标，或从「已安装的应用」列表中选择
-- 扫描 Application Support、Caches、Preferences、Containers、Group Containers、Logs、Saved Application State、WebKit、HTTPStorages、LaunchAgents/Daemons、PrivilegedHelperTools、安装收据、崩溃报告、系统临时缓存等位置
-- 通过 Bundle ID（含内嵌扩展、Helper、登录项的 ID）和应用名精确匹配
-- 删除即移到废纸篓，可恢复；需要权限的文件会请求管理员密码
-- 运行中的 App 会先提示退出；macOS 系统自带应用受保护
-- 窗口可自由缩放
-- 自动检查 GitHub Releases 上的新版本，可一键安装并重启（菜单「AppSweep → 检查更新…」）
+## Features
 
-## 安装
+- Drop an `.app` onto the window or the Dock icon, or pick one from the list of installed apps
+- Scans Application Support, Caches, Preferences, Containers, Group Containers, Logs, Saved Application State, WebKit, HTTPStorages, LaunchAgents/Daemons, PrivilegedHelperTools, installer receipts, crash reports and system temp caches
+- Matches by bundle ID (including the IDs of embedded extensions, helpers and login items) and by app name
+- Files go to the Trash, so nothing is lost for good; protected files ask for your administrator password
+- Asks you to quit an app that is still running; built-in macOS apps are protected
+- Resizable window
+- Checks GitHub Releases for new versions and can install them and relaunch in one click (menu **AppSweep → 检查更新…** / Check for Updates)
 
-从 [Releases](../../releases) 下载 `AppSweep-x.y.z.zip`，解压后拖到「应用程序」。
+## Install
 
-应用未经 Apple 公证，首次打开如被拦截，请右键 →「打开」，或执行：
+Download `AppSweep-x.y.z.zip` from [Releases](../../releases), unzip it and drag it into Applications.
+
+The app is not notarized by Apple. If macOS blocks it on first launch, right-click it and choose **Open**, or run:
 
 ```sh
 xattr -cr /Applications/AppSweep.app
 ```
 
-建议在「系统设置 → 隐私与安全性 → 完全磁盘访问权限」中加入 AppSweep 以获得最完整的扫描结果。
+For the most complete results, add AppSweep under **System Settings → Privacy & Security → Full Disk Access**.
 
-## 构建
+## Build
 
-需要 Xcode 命令行工具，macOS 14+，Apple Silicon。
+Requires the Xcode command line tools, macOS 14+ and Apple Silicon.
 
 ```sh
-./build.sh   # 输出 build/AppSweep.app 和 build/AppSweep-<版本>.zip
+./build.sh   # produces build/AppSweep.app and build/AppSweep-<version>.zip
 ```
 
-## 发布新版本
+## Releasing a new version
 
-1. 修改 `Resources/Info.plist` 中的 `CFBundleShortVersionString`
-2. `./build.sh`
-3. `gh release create v<版本> build/AppSweep-<版本>.zip --notes "更新说明"`
+1. Bump `CFBundleShortVersionString` in `Resources/Info.plist`
+2. Run `./build.sh`
+3. Run `gh release create v<version> build/AppSweep-<version>.zip --notes "Release notes"`
 
-已安装的 App 启动时（每天最多一次）会检查最新 Release，发现新版本时提示更新。
+Installed copies check for the latest release at launch (at most once a day) and offer to update when a newer version is available.
