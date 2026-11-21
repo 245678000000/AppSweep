@@ -1,6 +1,27 @@
-# AppSweep
+<p align="center">
+  <img src="docs/icon.png" width="128" alt="AppSweep 图标">
+</p>
 
-一个 macOS 应用卸载工具：把 App 拖进窗口，自动找出它散落在系统各处的所有相关文件，勾选后一键移到废纸篓。
+<h1 align="center">AppSweep</h1>
+
+<p align="center">
+  一个 macOS 应用卸载工具：把 App 拖进窗口，自动找出它散落在系统各处的所有相关文件，勾选后一键移到废纸篓。
+</p>
+
+<p align="center">
+  <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/245678000000/AppSweep?label=%E4%B8%8B%E8%BD%BD" alt="下载最新版"></a>
+  <img src="https://img.shields.io/badge/macOS-14%2B-blue" alt="macOS 14+">
+  <img src="https://img.shields.io/badge/Apple%20Silicon-arm64-lightgrey" alt="Apple Silicon">
+</p>
+
+## 截图
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshot-drop.png" width="420" alt="拖放界面"><br>把应用拖进来</td>
+    <td align="center"><img src="docs/screenshot-results.png" width="420" alt="扫描结果"><br>列出所有相关文件，勾选后删除</td>
+  </tr>
+</table>
 
 ## 功能
 
