@@ -16,6 +16,8 @@
   <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/245678000000/AppSweep?label=%E4%B8%8B%E8%BD%BD" alt="下载最新版"></a>
   <img src="https://img.shields.io/badge/macOS-14%2B-blue" alt="macOS 14+">
   <img src="https://img.shields.io/badge/Apple%20Silicon-arm64-lightgrey" alt="Apple Silicon">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/245678000000/AppSweep" alt="MIT License"></a>
+  <a href="../../stargazers"><img src="https://img.shields.io/github/stars/245678000000/AppSweep?style=flat" alt="Stars"></a>
 </p>
 
 ## 截图
@@ -64,3 +66,18 @@ xattr -cr /Applications/AppSweep.app
 3. `gh release create v<版本> build/AppSweep-<版本>.zip --notes "更新说明"`
 
 已安装的 App 启动时（每天最多一次）会检查最新 Release，发现新版本时提示更新。
+
+## Star 增长趋势
+
+<p align="center">
+<a href="https://star-history.com/#245678000000/AppSweep&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=245678000000/AppSweep&type=Date&theme=dark">
+    <img src="https://api.star-history.com/svg?repos=245678000000/AppSweep&type=Date" alt="Star History Chart" width="600">
+  </picture>
+</a>
+</p>
+
+## 开源协议
+
+基于 [MIT](LICENSE) 协议开源 © 2026 Peng Xing。如果 AppSweep 对你有帮助，欢迎点个 ⭐ Star！

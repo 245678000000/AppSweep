@@ -16,6 +16,8 @@
   <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/245678000000/AppSweep?label=Download" alt="Download latest release"></a>
   <img src="https://img.shields.io/badge/macOS-14%2B-blue" alt="macOS 14+">
   <img src="https://img.shields.io/badge/Apple%20Silicon-arm64-lightgrey" alt="Apple Silicon">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/245678000000/AppSweep" alt="MIT License"></a>
+  <a href="../../stargazers"><img src="https://img.shields.io/github/stars/245678000000/AppSweep?style=flat" alt="Stars"></a>
 </p>
 
 ## Screenshots
@@ -66,3 +68,18 @@ Requires the Xcode command line tools, macOS 14+ and Apple Silicon.
 3. Run `gh release create v<version> build/AppSweep-<version>.zip --notes "Release notes"`
 
 Installed copies check for the latest release at launch (at most once a day) and offer to update when a newer version is available.
+
+## Star History
+
+<p align="center">
+<a href="https://star-history.com/#245678000000/AppSweep&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=245678000000/AppSweep&type=Date&theme=dark">
+    <img src="https://api.star-history.com/svg?repos=245678000000/AppSweep&type=Date" alt="Star History Chart" width="600">
+  </picture>
+</a>
+</p>
+
+## License
+
+[MIT](LICENSE) © 2026 Peng Xing. If AppSweep helps you, a ⭐ star would mean a lot!
