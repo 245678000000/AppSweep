@@ -34,6 +34,7 @@ final class Model: ObservableObject {
         apps = infos
         items = []
         phase = .scanning
+        Sounds.play(.drop)
         Task.detached(priority: .userInitiated) {
             let found = Scanner.scan(infos)
             await MainActor.run {
@@ -43,6 +44,7 @@ final class Model: ObservableObject {
                     return a.size > b.size
                 }
                 self.phase = .results
+                Sounds.play(.scanned)
             }
         }
     }
@@ -110,6 +112,8 @@ final class Model: ObservableObject {
 
             let stillThere = targets.filter { fm.fileExists(atPath: $0.url.path) }
             let removed = targets.filter { !fm.fileExists(atPath: $0.url.path) }
+            if !removed.isEmpty { Sounds.play(.trashed) }
+            if removed.isEmpty && !stillThere.isEmpty { Sounds.play(.failed) }
             phase = .done(freed: removed.reduce(0) { $0 + $1.size },
                           removed: removed.count,
                           failed: stillThere.map(\.displayPath))

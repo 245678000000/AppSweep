@@ -5,6 +5,7 @@ import AppKit
 struct AppSweepApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var model = Model.shared
+    @AppStorage(Sounds.enabledKey) private var soundEnabled = true
 
     var body: some Scene {
         Window("AppSweep", id: "main") {
@@ -16,6 +17,7 @@ struct AppSweepApp: App {
         .commands {
             CommandGroup(after: .appInfo) {
                 Button("检查更新…") { Task { await Updater.shared.check(userInitiated: true) } }
+                Toggle("音效", isOn: $soundEnabled)
             }
         }
     }
